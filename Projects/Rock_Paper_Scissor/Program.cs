@@ -12,15 +12,24 @@ namespace ROCKPAPERSCISSORS
         {
             string inputPlayer, inputCPU;
             int randomInt;
-            Console.Write("Choose between ROCK, PAPER and SCISSORS:    ");
-            inputPlayer = Console.ReadLine();
-            inputPlayer = inputPlayer.ToUpper();
+            bool playAgain = true;
+            while (playAgain)
+            {
 
-            Random rnd = new Random();
+                int scorePlayer = 0;
+                int scoreCPU = 0;
 
-            randomInt = rnd.Next(1, 4);
+                while (scorePlayer < 3 && scoreCPU < 3)
+                {
 
-            int scorePlayer=0,scoreCPU=0;
+
+                    Console.Write("Choose between ROCK, PAPER and SCISSORS:    ");
+                    inputPlayer = Console.ReadLine();
+                    inputPlayer = inputPlayer.ToUpper();
+
+                    Random rnd = new Random();
+
+                    randomInt = rnd.Next(1, 4);
 
             switch (randomInt)
             {
@@ -81,7 +90,22 @@ namespace ROCKPAPERSCISSORS
                 default:
                     Console.WriteLine("Invalid entry!");
                     break;
-            }       
+            }
+            Console.WriteLine("\n\nSCORES:\tPLAYER:\t{0}\tCPU:\t{1}", scorePlayer, scoreCPU);
+            }
+            if (scorePlayer == 3)
+            {
+                Console.WriteLine("Player WON!");
+            }
+            else if (scoreCPU == 3)
+            {   
+                Console.WriteLine("CPU WON!");
+            }
+            else
+            {
+
+            }
+            }
         }
     }
 }
