@@ -105,6 +105,21 @@ namespace ROCKPAPERSCISSORS
             {
 
             }
+            Console.WriteLine("Do you want to play again?(y/n)");
+            string loop = Console.ReadLine();
+            if (loop == "y")
+            {
+                playAgain = true;
+                Console.Clear();
+            }
+            else if (loop == "n")
+            {
+                playAgain = false;
+            }
+            else
+            { 
+            
+            }
             }
         }
     }
